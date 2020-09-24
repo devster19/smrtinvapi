@@ -59,7 +59,7 @@ HOST: https://polls.apiblueprint.org/
     - include = รวมบิล
     - split = แยกบิล
     
-+ requestEmail: (string) อีเมลที่ใช้ในการรับใบแจ
++ requestEmail: (string) อีเมลที่ใช้ในการรับใบแจ้งหนี้
 
 ## Invoice Collection [/invoice/]
 
