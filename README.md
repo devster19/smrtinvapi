@@ -216,19 +216,22 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "ae76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": ""
+                                "description": "",
+                                "checked": true
                             },
                             { 
                                 "id": "ae76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
-                                "description": ""
+                                "description": "",
+                                "checked": true
                             },
                             { 
                                 "id": "ae76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": ""
+                                "description": "",
+                                "checked": true
                             }
                         ]
                     },
@@ -261,19 +264,22 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "dd76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": ""
+                                "description": "",
+                                "checked": true
                             },
                             { 
                                 "id": "dd76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
-                                "description": ""
+                                "description": "",
+                                "checked": true
                             },
                             { 
                                 "id": "dd76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": ""
+                                "description": "",
+                                "checked": true
                             }
                         ]
                     },
@@ -420,6 +426,112 @@ HOST: https://polls.apiblueprint.org/
             "requestBillType":"include",
             "requestEmail":"test@mail.com"
             }
+
+### Update Payment Item per Invoice  [Patch]
++ Request (application/json)
+
+    + Headers 
+    
+            Authorization: eyJjb250cmFjdElkIjoiMTIzNDU2Nzg5MCJ9
+    + Request (application/json)
+
+        {
+            "data":[
+                {
+                    "invoiceId": "ae76865",
+                    "paymentDetails":{
+                        "paymentItems":
+                        [
+                            {
+                                "id": "ae76865-001",
+                                "name": "ค่าเช่า",
+                                "value": "200,000.00",
+                                "description": "",
+                                "checked": false
+                            },
+                            { 
+                                "id": "ae76865-002",
+                                "name": "ค่าไฟ",
+                                "value": "31,345.00", 
+                                "description": "",
+                                "checked": true
+                            },
+                            { 
+                                "id": "ae76865-003",
+                                "name": "ค่าน้ำ",
+                                "value": "3,463.25", 
+                                "description": "",
+                                "checked": true
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+        
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "transactionId": "d7e992f3",
+                "transactionType": "PURCHASE",
+                "billPayment": {
+                    "paymentAmount": "234,763.25",
+                    "accountTo": "123456789012345",
+                    "ref1": "ae76865"
+                },
+                "data": [ 
+                {
+                    "invoiceId": "ae76865",
+                    "branch": { 
+                        "branchId": "b783343", 
+                        "nameEN": "Central RAMA IX", 
+                        "nameTH": "เซนทรัล พระราม 9"
+                    },
+                    "shop":  { 
+                        "shopId": "s018ee3", 
+                        "nameEN": "Beleive Store", 
+                        "nameTH": "บีลีฟ สโตร์"
+                    },
+                    "description": "",
+                    "status": "overdue",
+                    "paymentDetails":{
+                        "total": "234,763.25",
+                        "discout": "20,000.00",
+                        "vatValue": "2,763.00",
+                        "taxValue": "1,190.00",
+                        "paymentItems":[
+                            {
+                                "id": "ae76865-001",
+                                "name": "ค่าเช่า",
+                                "value": "200,000.00",
+                                "description": "",
+                                "checked": false
+                            },
+                            { 
+                                "id": "ae76865-002",
+                                "name": "ค่าไฟ",
+                                "value": "31,345.00", 
+                                "description": "",
+                                "checked": true
+                            },
+                            { 
+                                "id": "ae76865-003",
+                                "name": "ค่าน้ำ",
+                                "value": "3,463.25", 
+                                "description": "",
+                                "checked": true
+                            }
+                        ]
+                    },
+                    "createDate": "2019-07-25T08:45:00",
+                    "endDate": "2020-07-25T08:45:00",
+                    "checked": true
+                },
+                
+            ]
+        }
 
 ### List All Invoice History [GET]
 * แสดงประวัติการชำระใบแจ้งหนี้
