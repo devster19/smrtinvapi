@@ -22,8 +22,16 @@ HOST: https://polls.apiblueprint.org/
                 {
                     "invoiceId": "ae76865",
                     "paymentStatus":false,
-                    "branch": { "branchId": "b783343", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                    "shop":  { "shopId": "s018ee3", "nameEN": "Beleive Store", "nameTH": "บีลีฟ สโตร์" },
+                    "branch": { 
+                        "branchId": "b783343", 
+                        "nameEN": "Central RAMA IX", 
+                        "nameTH": "เซนทรัล พระราม 9"
+                    },
+                    "shop":  { 
+                        "shopId": "s018ee3", 
+                        "nameEN": "Beleive Store", 
+                        "nameTH": "บีลีฟ สโตร์"
+                    },
                     "description": "",
                     "status": "overdue",
                     "paymentDetail":{
@@ -62,8 +70,16 @@ HOST: https://polls.apiblueprint.org/
                 {
                     "invoiceId": "dd76865",
                     "paymentStatus":false,
-                    "branch": { "branchId":"bd22676", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                    "shop":  { "shopId":"sd22676", "nameEN": "Beleive ฺBakery", "nameTH": "บีลีฟ เบเกอรี่" },
+                    "branch": { 
+                        "branchId":"bd22676", 
+                        "nameEN": "Central RAMA IX", 
+                        "nameTH": "เซนทรัล พระราม 9"
+                    },
+                    "shop":  { 
+                        "shopId":"sd22676", 
+                        "nameEN": "Beleive ฺBakery",
+                        "nameTH": "บีลีฟ เบเกอรี่"
+                    },
                     "description": "",
                     "status": "overdue",
                     "paymentDetails":{
@@ -99,8 +115,16 @@ HOST: https://polls.apiblueprint.org/
                 {
                     "invoiceId": "dd76865",
                     "paymentStatus":false,
-                    "branch": { "branchId": "d345999", "nameEN": "Central  Bagna", "nameTH": "เซนทรัล บางนา" },
-                    "shop":  { "shopId": "s783343", "nameEN": "Beleive Electronics", "nameTH": "บีลีฟ อิเล็กทรอนิกส์" },
+                    "branch": { 
+                        "branchId": "d345999", 
+                        "nameEN": "Central  Bagna", 
+                        "nameTH": "เซนทรัล บางนา"
+                    },
+                    "shop": { 
+                        "shopId": "s783343", 
+                        "nameEN": "Beleive Electronics", 
+                        "nameTH": "บีลีฟ อิเล็กทรอนิกส์"
+                    },
                     "description": "",
                     "status": "overdue",
                     "paymentDetails":{
@@ -170,8 +194,16 @@ HOST: https://polls.apiblueprint.org/
                 {
                     "invoiceId": "ae76865",
                     "paymentStatus":false,
-                    "branch": { "branchId": "b783343", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                    "shop":  { "shopId": "s018ee3", "nameEN": "Beleive Store", "nameTH": "บีลีฟ สโตร์" },
+                    "branch": { 
+                        "branchId": "b783343", 
+                        "nameEN": "Central RAMA IX",
+                        "nameTH": "เซนทรัล พระราม 9"
+                    },
+                    "shop":  { 
+                        "shopId": "s018ee3", 
+                        "nameEN": "Beleive Store", 
+                        "nameTH": "บีลีฟ สโตร์" 
+                    },
                     "description": "",
                     "status": "overdue",
                     "paymentDetails":{
@@ -207,8 +239,16 @@ HOST: https://polls.apiblueprint.org/
                 {
                     "invoiceId": "dd76865",
                     "paymentStatus":false,
-                    "branch": { "branchId": "b783343", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                    "shop":  { "shopId": "s783343", "nameEN": "Beleive Electronics", "nameTH": "บีลีฟ อิเล็กทรอนิกส์" },
+                    "branch": { 
+                        "branchId": "b783343", 
+                        "nameEN": "Central RAMA IX", 
+                        "nameTH": "เซนทรัล พระราม 9"
+                    },
+                    "shop":  { 
+                        "shopId": "s783343", 
+                        "nameEN": "Beleive Electronics", 
+                        "nameTH": "บีลีฟ อิเล็กทรอนิกส์"
+                    },
                     "description": "",
                     "status": "overdue",
                     "paymentDetails":{
@@ -262,8 +302,16 @@ HOST: https://polls.apiblueprint.org/
             {
                     "invoiceId": "ae76865",
                     "paymentStatus":false,
-                    "branch": { "branchId": "b783343", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                    "shop":  { "shopId": "s018ee3", "nameEN": "Beleive Store", "nameTH": "บีลีฟ สโตร์" },
+                    "branch": { 
+                        "branchId": "b783343", 
+                        "nameEN": "Central RAMA IX", 
+                        "nameTH": "เซนทรัล พระราม 9"
+                    },
+                    "shop":  { 
+                        "shopId": "s018ee3", 
+                        "nameEN": "Beleive Store", 
+                        "nameTH": "บีลีฟ สโตร์"
+                    },
                     "description": "",
                     "status": "overdue",
                     "paymentDetails":{
@@ -320,8 +368,16 @@ HOST: https://polls.apiblueprint.org/
                 "data": [ 
                 {
                     "invoiceId": "ae76865",
-                    "branch": { "branchId": "b783343", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                    "shop":  { "shopId": "s018ee3", "nameEN": "Beleive Store", "nameTH": "บีลีฟ สโตร์" },
+                    "branch": { 
+                        "branchId": "b783343", 
+                        "nameEN": "Central RAMA IX", 
+                        "nameTH": "เซนทรัล พระราม 9"
+                    },
+                    "shop":  { 
+                        "shopId": "s018ee3", 
+                        "nameEN": "Beleive Store", 
+                        "nameTH": "บีลีฟ สโตร์"
+                    },
                     "description": "",
                     "status": "overdue",
                     "paymentDetails":{
@@ -391,8 +447,16 @@ HOST: https://polls.apiblueprint.org/
                     {
                         "invoiceId": "ae76865",
                         "paymentStatus":false,
-                        "branch": { "branchId": "b783343", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                        "shop":  { "shopId": "s018ee3", "nameEN": "Beleive Store", "nameTH": "บีลีฟ สโตร์" },
+                        "branch": { 
+                            "branchId": "b783343", 
+                            "nameEN": "Central RAMA IX", 
+                            "nameTH": "เซนทรัล พระราม 9"
+                        },
+                        "shop":  { 
+                            "shopId": "s018ee3", 
+                            "nameEN": "Beleive Store", 
+                            "nameTH": "บีลีฟ สโตร์" 
+                        },
                         "description": "",
                         "status": "overdue",
                         "paymentDetails":{
@@ -428,8 +492,16 @@ HOST: https://polls.apiblueprint.org/
                     {
                         "invoiceId": "dd76865",
                         "paymentStatus":"paid",
-                        "branch": { "branchId": "b783343", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                        "shop":  { "shopId": "s783343", "nameEN": "Beleive Electronics", "nameTH": "บีลีฟ อิเล็กทรอนิกส์" },
+                        "branch": { 
+                            "branchId": "b783343", 
+                            "nameEN": "Central RAMA IX", 
+                            "nameTH": "เซนทรัล พระราม 9"
+                        },
+                        "shop":  { 
+                            "shopId": "s783343", 
+                            "nameEN": "Beleive Electronics", 
+                            "nameTH": "บีลีฟ อิเล็กทรอนิกส์"
+                        },
                         "description": "",
                         "status": "overdue",
                         "paymentDetails":{
@@ -480,8 +552,16 @@ HOST: https://polls.apiblueprint.org/
                     {
                         "invoiceId": "bb3212a2",
                         "paymentStatus":false,
-                        "branch": { "branchId": "b783343", "nameEN": "Central RAMA IX", "nameTH": "เซนทรัล พระราม 9" },
-                        "shop":  { "shopId": "s018ee3", "nameEN": "Beleive Store", "nameTH": "บีลีฟ สโตร์" },
+                        "branch": { 
+                            "branchId": "b783343", 
+                            "nameEN": "Central RAMA IX", 
+                            "nameTH": "เซนทรัล พระราม 9"
+                        },
+                        "shop":  { 
+                            "shopId": "s018ee3", 
+                            "nameEN": "Beleive Store", 
+                            "nameTH": "บีลีฟ สโตร์"
+                        },
                         "description": "",
                         "status": "overdue",
                         "paymentDetails":{
