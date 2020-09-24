@@ -427,46 +427,58 @@ HOST: https://polls.apiblueprint.org/
             "requestEmail":"test@mail.com"
             }
 
-### Update Payment Item per Invoice  [Patch]
+### Update Payment Item per invoice [PATCH]
+* อัพเดทรายการที่ต้องการจ่ายภายใต้ใบแจ้งหนี้
 + Request (application/json)
 
     + Headers 
     
             Authorization: eyJjb250cmFjdElkIjoiMTIzNDU2Nzg5MCJ9
-    + Request (application/json)
+            
++ Request (application/json)
 
         {
             "data":[
-                {
+            {
                     "invoiceId": "ae76865",
+                    "branch": { 
+                        "branchId": "b783343", 
+                        "nameEN": "Central RAMA IX", 
+                        "nameTH": "เซนทรัล พระราม 9"
+                    },
+                    "shop":  { 
+                        "shopId": "s018ee3", 
+                        "nameEN": "Beleive Store", 
+                        "nameTH": "บีลีฟ สโตร์"
+                    },
                     "paymentDetails":{
-                        "paymentItems":
-                        [
+                        "paymentItems":[
                             {
                                 "id": "ae76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
                                 "description": "",
-                                "checked": false
+                                "checked": true
                             },
                             { 
                                 "id": "ae76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
                                 "description": "",
-                                "checked": true
+                                "checked": false
                             },
                             { 
                                 "id": "ae76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
                                 "description": "",
-                                "checked": true
+                                "checked": false
                             }
                         ]
-                    }
+                    },
+                    
                 }
-            ]
+            ],
         }
         
 + Response 201 (application/json)
@@ -477,7 +489,7 @@ HOST: https://polls.apiblueprint.org/
                 "transactionId": "d7e992f3",
                 "transactionType": "PURCHASE",
                 "billPayment": {
-                    "paymentAmount": "234,763.25",
+                    "paymentAmount": "200,000.00",
                     "accountTo": "123456789012345",
                     "ref1": "ae76865"
                 },
@@ -507,21 +519,21 @@ HOST: https://polls.apiblueprint.org/
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
                                 "description": "",
-                                "checked": false
+                                "checked": true
                             },
                             { 
                                 "id": "ae76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
                                 "description": "",
-                                "checked": true
+                                "checked": false
                             },
                             { 
                                 "id": "ae76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
                                 "description": "",
-                                "checked": true
+                                "checked": false
                             }
                         ]
                     },
@@ -530,8 +542,12 @@ HOST: https://polls.apiblueprint.org/
                     "checked": true
                 },
                 
-            ]
-        }
+            ],
+            "paymentDate": "2020-07-25T08:45:00",
+            "paymentChannel":"kbank",
+            "requestBillType":"include",
+            "requestEmail":"test@mail.com"
+            }
 
 ### List All Invoice History [GET]
 * แสดงประวัติการชำระใบแจ้งหนี้
@@ -543,174 +559,173 @@ HOST: https://polls.apiblueprint.org/
 
 + Response 200 (application/json)
 
-        
-        {
-            "data" :[
-                {
-                    "transactionId": "d7e992f3",
-                    "transactionType": "PURCHASE",
-                    "billPayment": {
-                        "paymentAmount": "796,000.75",
-                        "accountTo": "123456789012345",
-                        "ref1": "ae76865",
-                        "ref2": "dd76865"
-                    },
-                    "data": [ 
+            {
+                "data" :[
                     {
-                        "invoiceId": "ae76865",
-                        "paymentStatus":false,
-                        "branch": { 
-                            "branchId": "b783343", 
-                            "nameEN": "Central RAMA IX", 
-                            "nameTH": "เซนทรัล พระราม 9"
+                        "transactionId": "d7e992f3",
+                        "transactionType": "PURCHASE",
+                        "billPayment": {
+                            "paymentAmount": "796,000.75",
+                            "accountTo": "123456789012345",
+                            "ref1": "ae76865",
+                            "ref2": "dd76865"
                         },
-                        "shop":  { 
-                            "shopId": "s018ee3", 
-                            "nameEN": "Beleive Store", 
-                            "nameTH": "บีลีฟ สโตร์" 
+                        "data": [ 
+                        {
+                            "invoiceId": "ae76865",
+                            "paymentStatus":false,
+                            "branch": { 
+                                "branchId": "b783343", 
+                                "nameEN": "Central RAMA IX", 
+                                "nameTH": "เซนทรัล พระราม 9"
+                            },
+                            "shop":  { 
+                                "shopId": "s018ee3", 
+                                "nameEN": "Beleive Store", 
+                                "nameTH": "บีลีฟ สโตร์" 
+                            },
+                            "description": "",
+                            "status": "overdue",
+                            "paymentDetails":{
+                                "total": "234,763.25",
+                                "discout": "20,000.00",
+                                "vatValue": "2,763.00",
+                                "taxValue": "1,190.00",
+                                "paymentItems":[
+                                    {
+                                        "id": "ae76865-001",
+                                        "name": "ค่าเช่า",
+                                        "value": "200,000.00",
+                                        "description": ""
+                                    },
+                                    { 
+                                        "id": "ae76865-002",
+                                        "name": "ค่าไฟ",
+                                        "value": "31,345.00", 
+                                        "description": ""
+                                    },
+                                    { 
+                                        "id": "ae76865-003",
+                                        "name": "ค่าน้ำ",
+                                        "value": "3,463.25", 
+                                        "description": ""
+                                    }
+                                ]
+                            },
+                            "createDate": "2019-07-25T08:45:00",
+                            "endDate": "2020-07-25T08:45:00",
+                            "checked": false
                         },
-                        "description": "",
-                        "status": "overdue",
-                        "paymentDetails":{
-                            "total": "234,763.25",
-                            "discout": "20,000.00",
-                            "vatValue": "2,763.00",
-                            "taxValue": "1,190.00",
-                            "paymentItems":[
-                                {
-                                    "id": "ae76865-001",
-                                    "name": "ค่าเช่า",
-                                    "value": "200,000.00",
-                                    "description": ""
-                                },
-                                { 
-                                    "id": "ae76865-002",
-                                    "name": "ค่าไฟ",
-                                    "value": "31,345.00", 
-                                    "description": ""
-                                },
-                                { 
-                                    "id": "ae76865-003",
-                                    "name": "ค่าน้ำ",
-                                    "value": "3,463.25", 
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "createDate": "2019-07-25T08:45:00",
-                        "endDate": "2020-07-25T08:45:00",
-                        "checked": false
-                    },
-                    {
-                        "invoiceId": "dd76865",
-                        "paymentStatus":"paid",
-                        "branch": { 
-                            "branchId": "b783343", 
-                            "nameEN": "Central RAMA IX", 
-                            "nameTH": "เซนทรัล พระราม 9"
-                        },
-                        "shop":  { 
-                            "shopId": "s783343", 
-                            "nameEN": "Beleive Electronics", 
-                            "nameTH": "บีลีฟ อิเล็กทรอนิกส์"
-                        },
-                        "description": "",
-                        "status": "overdue",
-                        "paymentDetails":{
-                            "total": "234,763.25",
-                            "discout": "20,000.00",
-                            "vatValue": "2,763.00",
-                            "taxValue": "1,190.00",
-                            "paymentItems":[
-                                {
-                                    "id": "dd76865-001",
-                                    "name": "ค่าเช่า",
-                                    "value": "200,000.00",
-                                    "description": ""
-                                },
-                                { 
-                                    "id": "dd76865-002",
-                                    "name": "ค่าไฟ",
-                                    "value": "31,345.00", 
-                                    "description": ""
-                                },
-                                { 
-                                    "id": "dd76865-003",
-                                    "name": "ค่าน้ำ",
-                                    "value": "3,463.25", 
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "createDate": "2019-07-25T08:45:00",
-                        "endDate": "2020-07-25T08:45:00",
-                        "checked": false
-                    }
-                ],
-                
-                "paymentDate": "2020-07-25T08:45:00"
-                
-                },
-                {
-                    "transactionId": "a7e992f3",
-                    "transactionType": "PURCHASE",
-                    "billPayment": {
-                        "paymentAmount": "796,000.75",
-                        "accountTo": "123456789012345",
-                        "ref1": "ae76865",
-                        "ref2": "dd76865"
-                    },
-                    "data": [ 
-                    {
-                        "invoiceId": "bb3212a2",
-                        "paymentStatus":false,
-                        "branch": { 
-                            "branchId": "b783343", 
-                            "nameEN": "Central RAMA IX", 
-                            "nameTH": "เซนทรัล พระราม 9"
-                        },
-                        "shop":  { 
-                            "shopId": "s018ee3", 
-                            "nameEN": "Beleive Store", 
-                            "nameTH": "บีลีฟ สโตร์"
-                        },
-                        "description": "",
-                        "status": "overdue",
-                        "paymentDetails":{
-                            "total": "234,763.25",
-                            "discout": "20,000.00",
-                            "vatValue": "2,763.00",
-                            "taxValue": "1,190.00",
-                            "paymentItems":[
-                                {
-                                    "id": "ae76865-001",
-                                    "name": "ค่าเช่า",
-                                    "value": "200,000.00",
-                                    "description": ""
-                                },
-                                { 
-                                    "id": "ae76865-002",
-                                    "name": "ค่าไฟ",
-                                    "value": "31,345.00", 
-                                    "description": ""
-                                },
-                                { 
-                                    "id": "ae76865-003",
-                                    "name": "ค่าน้ำ",
-                                    "value": "3,463.25", 
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "createDate": "2019-07-25T08:45:00",
-                        "endDate": "2020-07-25T08:45:00",
-                        "checked": false
-                    }
+                        {
+                            "invoiceId": "dd76865",
+                            "paymentStatus":"paid",
+                            "branch": { 
+                                "branchId": "b783343", 
+                                "nameEN": "Central RAMA IX", 
+                                "nameTH": "เซนทรัล พระราม 9"
+                            },
+                            "shop":  { 
+                                "shopId": "s783343", 
+                                "nameEN": "Beleive Electronics", 
+                                "nameTH": "บีลีฟ อิเล็กทรอนิกส์"
+                            },
+                            "description": "",
+                            "status": "overdue",
+                            "paymentDetails":{
+                                "total": "234,763.25",
+                                "discout": "20,000.00",
+                                "vatValue": "2,763.00",
+                                "taxValue": "1,190.00",
+                                "paymentItems":[
+                                    {
+                                        "id": "dd76865-001",
+                                        "name": "ค่าเช่า",
+                                        "value": "200,000.00",
+                                        "description": ""
+                                    },
+                                    { 
+                                        "id": "dd76865-002",
+                                        "name": "ค่าไฟ",
+                                        "value": "31,345.00", 
+                                        "description": ""
+                                    },
+                                    { 
+                                        "id": "dd76865-003",
+                                        "name": "ค่าน้ำ",
+                                        "value": "3,463.25", 
+                                        "description": ""
+                                    }
+                                ]
+                            },
+                            "createDate": "2019-07-25T08:45:00",
+                            "endDate": "2020-07-25T08:45:00",
+                            "checked": false
+                        }
                     ],
+                    
                     "paymentDate": "2020-07-25T08:45:00"
-                }
-            ]
-        }
+                    
+                    },
+                    {
+                        "transactionId": "a7e992f3",
+                        "transactionType": "PURCHASE",
+                        "billPayment": {
+                            "paymentAmount": "796,000.75",
+                            "accountTo": "123456789012345",
+                            "ref1": "ae76865",
+                            "ref2": "dd76865"
+                        },
+                        "data": [ 
+                        {
+                            "invoiceId": "bb3212a2",
+                            "paymentStatus":false,
+                            "branch": { 
+                                "branchId": "b783343", 
+                                "nameEN": "Central RAMA IX", 
+                                "nameTH": "เซนทรัล พระราม 9"
+                            },
+                            "shop":  { 
+                                "shopId": "s018ee3", 
+                                "nameEN": "Beleive Store", 
+                                "nameTH": "บีลีฟ สโตร์"
+                            },
+                            "description": "",
+                            "status": "overdue",
+                            "paymentDetails":{
+                                "total": "234,763.25",
+                                "discout": "20,000.00",
+                                "vatValue": "2,763.00",
+                                "taxValue": "1,190.00",
+                                "paymentItems":[
+                                    {
+                                        "id": "ae76865-001",
+                                        "name": "ค่าเช่า",
+                                        "value": "200,000.00",
+                                        "description": ""
+                                    },
+                                    { 
+                                        "id": "ae76865-002",
+                                        "name": "ค่าไฟ",
+                                        "value": "31,345.00", 
+                                        "description": ""
+                                    },
+                                    { 
+                                        "id": "ae76865-003",
+                                        "name": "ค่าน้ำ",
+                                        "value": "3,463.25", 
+                                        "description": ""
+                                    }
+                                ]
+                            },
+                            "createDate": "2019-07-25T08:45:00",
+                            "endDate": "2020-07-25T08:45:00",
+                            "checked": false
+                        }
+                        ],
+                        "paymentDate": "2020-07-25T08:45:00"
+                    }
+                ]
+            }
         
 
 ## Download Invoice  [/invoice/payment/{transactionId}]
