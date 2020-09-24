@@ -21,7 +21,6 @@ HOST: https://polls.apiblueprint.org/
             "data": [ 
                 {
                     "invoiceId": "ae76865",
-                    "paymentStatus":false,
                     "branch": { 
                         "branchId": "b783343", 
                         "nameEN": "Central RAMA IX", 
@@ -69,7 +68,6 @@ HOST: https://polls.apiblueprint.org/
                 },
                 {
                     "invoiceId": "dd76865",
-                    "paymentStatus":false,
                     "branch": { 
                         "branchId":"bd22676", 
                         "nameEN": "Central RAMA IX", 
@@ -114,7 +112,6 @@ HOST: https://polls.apiblueprint.org/
                 },
                 {
                     "invoiceId": "dd76865",
-                    "paymentStatus":false,
                     "branch": { 
                         "branchId": "d345999", 
                         "nameEN": "Central  Bagna", 
@@ -193,7 +190,6 @@ HOST: https://polls.apiblueprint.org/
             "data": [ 
                 {
                     "invoiceId": "ae76865",
-                    "paymentStatus":false,
                     "branch": { 
                         "branchId": "b783343", 
                         "nameEN": "Central RAMA IX",
@@ -307,7 +303,6 @@ HOST: https://polls.apiblueprint.org/
             "data":[
             {
                     "invoiceId": "ae76865",
-                    "paymentStatus":false,
                     "branch": { 
                         "branchId": "b783343", 
                         "nameEN": "Central RAMA IX", 
@@ -486,6 +481,7 @@ HOST: https://polls.apiblueprint.org/
     + Body
 
             {
+                "result": "sucessfull"
                 "transactionId": "d7e992f3",
                 "transactionType": "PURCHASE",
                 "billPayment": {
@@ -569,7 +565,6 @@ HOST: https://polls.apiblueprint.org/
                         "data": [ 
                         {
                             "invoiceId": "ae76865",
-                            "paymentStatus":false,
                             "branch": { 
                                 "branchId": "b783343", 
                                 "nameEN": "Central RAMA IX", 
@@ -610,7 +605,6 @@ HOST: https://polls.apiblueprint.org/
                             },
                             "createDate": "2019-07-25T08:45:00",
                             "endDate": "2020-07-25T08:45:00",
-                            "checked": false
                         },
                         {
                             "invoiceId": "dd76865",
@@ -655,7 +649,6 @@ HOST: https://polls.apiblueprint.org/
                             },
                             "createDate": "2019-07-25T08:45:00",
                             "endDate": "2020-07-25T08:45:00",
-                            "checked": false
                         }
                     ],
                     
@@ -674,7 +667,6 @@ HOST: https://polls.apiblueprint.org/
                         "data": [ 
                         {
                             "invoiceId": "bb3212a2",
-                            "paymentStatus":false,
                             "branch": { 
                                 "branchId": "b783343", 
                                 "nameEN": "Central RAMA IX", 
@@ -715,7 +707,6 @@ HOST: https://polls.apiblueprint.org/
                             },
                             "createDate": "2019-07-25T08:45:00",
                             "endDate": "2020-07-25T08:45:00",
-                            "checked": false
                         }
                         ],
                         "paymentDate": "2020-07-25T08:45:00"
