@@ -427,7 +427,7 @@ HOST: https://polls.apiblueprint.org/
             "requestEmail":"test@mail.com"
             }
 
-### Update Payment Item per invoice [PATCH]
+### Update Payment Item per Invoice [PATCH]
 * อัพเดทรายการที่ต้องการจ่ายภายใต้ใบแจ้งหนี้
 + Request (application/json)
 
@@ -475,10 +475,10 @@ HOST: https://polls.apiblueprint.org/
                                 "checked": false
                             }
                         ]
-                    },
+                    }
                     
                 }
-            ],
+            ]
         }
         
 + Response 201 (application/json)
@@ -540,13 +540,9 @@ HOST: https://polls.apiblueprint.org/
                     "createDate": "2019-07-25T08:45:00",
                     "endDate": "2020-07-25T08:45:00",
                     "checked": true
-                },
+                }
                 
-            ],
-            "paymentDate": "2020-07-25T08:45:00",
-            "paymentChannel":"kbank",
-            "requestBillType":"include",
-            "requestEmail":"test@mail.com"
+            ]
             }
 
 ### List All Invoice History [GET]
