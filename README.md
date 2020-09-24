@@ -4,6 +4,63 @@ HOST: https://polls.apiblueprint.org/
 # Invoice
 ตัวอย่าง API Response สำหรับใช้แสดงข้อมูลการชำระเงิน
 
+## คำอธิบาย Response (object)
++ totalAmount: (string) ยอดชำรวมทุก Invoice
+
+
++ branchId: 000008783 (string)   ไอดีสาขา
+
++ brandName: {"en": "Central RAMA IX", "th": "เซนทรัล พระราม 9"}  (object)
+
+    แสดงข้อมูลชื่อภาษา ทั้งไทย และ อังกฤษ
+    
++ data: [{}]  (Array of object)
+
+    แสดงข้อมูลที่จำเป็นต่อการแสดงผล  UI ดังต่อไปนี้
+    
+    **shopId** : (string) ไอดีของร้านที่ทำการแจ้งซ่อม
+    
+    **invoiceId**: (string) ไอดีใบแจ้งหนี้
+    
+    **shopName**: (object) ชื่อร้าน
+ 
+    **status**: (string) สถานะการชำระหนี้ประกอบด้วย
+    - due
+    - overdue
+    - due soon (optional)
+    
+    **paymentDetail**: (object) แสดงข้อสิ่งที่ต้องทำการชำระ
+    - total: (string) ยอดชำระทั้งหมดของ Invoice
+    - discout: (string) ยอดส่วนลดทั้งหมดของ Invoice
+    - vatValue": (string) ยอด VAT
+    - taxValue": (string) ยอด TAX
+    - paymentItems: : (object of array)
+    - id: (string) ไอดีของไอเทมที่ต้องชำระ
+    - name: (string) ชื่อรายการที่ต้องชำระ
+    - value: (string) ค่าใช้จ่ายแต่ละรายการ
+    - description: (string) รายละเอียดเพิ่มเติมที่ต้องการระบุ
+    - checked: (boolean) สเตตัสการเลือกสินค้า default = true
+
++ createDate: (datetime) วันที่ทำการสร้างใบ Invoice
++ endDate: (datetime) วันครบกำหนดชำระ
++ checked: (boolean) สเตตัสการเลือกใบ Invoice default true กรณี stutus = overdue
+
++ transactionId: (string) ไอดีการชำระ
++ transactionType: (string) ประเภทการชำระ TBC
++ billPayment: (object) ข้อมูลการชำระที่ได้รับจากธนาคาร
+
+    - paymentAmount: (string) ยอดที่ชำระ
+    - accountTo: (string) แอคเค้าไอดีที่ชำระTBC
+    - ref1: (string) reference ไอดี สำหรับอ้างอิงการชำระเงินกับธนาคาร TBC
+    - ref2: (string) reference ไอดี สำหรับอ้างอิงการชำระเงินกับธนาคาร TBC
+
++ paymentChannel: (string) ธนาคารที่ชำระ
++ requestBillType: (string) ประเภทการขอบิล
+    - include = รวมบิล
+    - split = แยกบิล
+    
++ requestEmail: (string) อีเมลที่ใช้ในการรับใบแจ
+
 ## Invoice Collection [/invoice/]
 
 ### List All Invoice(s) [GET]
