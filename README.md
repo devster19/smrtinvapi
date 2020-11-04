@@ -1,7 +1,7 @@
 FORMAT: 1A
 HOST: https://polls.apiblueprint.org/
 
-# Smart Invoice v1.0.2
+# SMARTINVv1.0.2
 ตัวอย่าง API Response สำหรับใช้แสดงข้อมูลการชำระเงิน
 
 ## คำอธิบาย Response (object)
@@ -38,7 +38,9 @@ HOST: https://polls.apiblueprint.org/
     - id: (string) ไอดีของไอเทมที่ต้องชำระ
     - name: (string) ชื่อรายการที่ต้องชำระ
     - value: (string) ค่าใช้จ่ายแต่ละรายการ
-    - description: (string) รายละเอียดเพิ่มเติมที่ต้องการระบุ
+    - description: (object) รายละเอียดเพิ่มเติมที่ต้องการระบุ
+        - name: (string) รายละเอียดที่หนึ่งเช่นรอบการชำระ 
+        - value: (string) ถ้ามีก็ส่งมายกตัวอย่าง ค่าเช่า จะมียอดเงินของค่า GP มาด้วย ถ้าไม่มีให้คือค่าว่าง ""
     - checked: (boolean) สเตตัสการเลือกสินค้า default = true
 
 + createDate: (datetime) วันที่ทำการสร้างใบ Invoice
@@ -101,21 +103,30 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "ae76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": "",
+                                "description": {
+                                    "name": "อัตราค่าเช่า (GP) Minimum",
+                                    "value": "30,000 บาท"
+                                },
                                 "checked": true
                             },
                             { 
                                 "id": "ae76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
-                                "description": "",
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                },
                                 "checked": true
                             },
                             { 
                                 "id": "ae76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": "",
+                               "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                },
                                 "checked": true
                             }
                         ]
@@ -148,19 +159,31 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "dd76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": ""
+                                "description": {
+                                    "name": "อัตราค่าเช่า (GP) Minimum",
+                                    "value": "30,000 บาท"
+                                },
+                                "checked": true,
                             },
                             { 
                                 "id": "dd76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
-                                "description": ""
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                },
+                                "checked": true
                             },
                             { 
                                 "id": "dd76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": ""
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                },
+                                "checked": true
                             }
                         ]
                     },
@@ -192,19 +215,28 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "dd76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": ""
+                                "description": {
+                                    "name": "อัตราค่าเช่า (GP) Minimum",
+                                    "value": "30,000 บาท"
+                                }
                             },
                             { 
                                 "id": "dd76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
-                                "description": ""
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                }
                             },
                             { 
                                 "id": "dd76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": ""
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                }
                             }
                         ]
                     },
@@ -270,7 +302,10 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "ae76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": "",
+                                "description": {
+                                    "name": "อัตราค่าเช่า (GP) Minimum",
+                                    "value": "30,000 บาท"
+                                },
                                 "checked": true
                             },
                             { 
@@ -284,7 +319,10 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "ae76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": "",
+                                "description": {
+                                    "name": "อัตราค่าเช่า (GP) Minimum",
+                                    "value": "30,000 บาท"
+                                },
                                 "checked": true
                             }
                         ]
@@ -318,21 +356,30 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "dd76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": "",
+                                "description": {
+                                    "name": "อัตราค่าเช่า (GP) Minimum",
+                                    "value": "30,000 บาท"
+                                },
                                 "checked": true
                             },
                             { 
                                 "id": "dd76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
-                                "description": "",
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                },
                                 "checked": true
                             },
                             { 
                                 "id": "dd76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": "",
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                },
                                 "checked": true
                             }
                         ]
@@ -384,21 +431,30 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "ae76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": "",
+                                "description": {
+                                    "name": "อัตราค่าเช่า (GP) Minimum",
+                                    "value": "30,000 บาท"
+                                },
                                 "checked": true
                             },
                             { 
                                 "id": "ae76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
-                                "description": "",
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                },
                                 "checked": true
                             },
                             { 
                                 "id": "ae76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": "",
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                },
                                 "checked": true
                             }
                         ]
@@ -452,22 +508,28 @@ HOST: https://polls.apiblueprint.org/
                                 "id": "ae76865-001",
                                 "name": "ค่าเช่า",
                                 "value": "200,000.00",
-                                "description": "",
-                                "checked": true
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                }
                             },
                             { 
                                 "id": "ae76865-002",
                                 "name": "ค่าไฟ",
                                 "value": "31,345.00", 
-                                "description": "",
-                                "checked": true
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                }
                             },
                             { 
                                 "id": "ae76865-003",
                                 "name": "ค่าน้ำ",
                                 "value": "3,463.25", 
-                                "description": "",
-                                "checked": true
+                                "description": {
+                                    "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                    "value": ""
+                                }
                             }
                         ]
                     },
@@ -699,19 +761,28 @@ HOST: https://polls.apiblueprint.org/
                                         "id": "dd76865-001",
                                         "name": "ค่าเช่า",
                                         "value": "200,000.00",
-                                        "description": ""
+                                       "description": {
+                                            "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                            "value": ""
+                                        }
                                     },
                                     { 
                                         "id": "dd76865-002",
                                         "name": "ค่าไฟ",
                                         "value": "31,345.00", 
-                                        "description": ""
+                                        "description": {
+                                            "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                            "value": ""
+                                        }
                                     },
                                     { 
                                         "id": "dd76865-003",
                                         "name": "ค่าน้ำ",
                                         "value": "3,463.25", 
-                                        "description": ""
+                                        "description": {
+                                            "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                            "value": ""
+                                        }
                                     }
                                 ]
                             },
@@ -813,7 +884,7 @@ HOST: https://polls.apiblueprint.org/
             "downloadPath": "/assets/purchase-a7e992f3.pdf"
         }
 
-## Request Invoice as Document [/invoice/{branchId}/{shopId}]
+## Request Invoice as Document [/invoice/request-invoice/{branchId}/{shopId}]
 ### List all availalbe invoices for user by shopId  [GET]
 * แสดงรายการบิลทั้งหมดที่ที่สามารถให้ลูกค้าทำการขอข้อมูลผ่านอีเมลได้
 
@@ -963,19 +1034,28 @@ HOST: https://polls.apiblueprint.org/
                                             "id": "ae76865-001",
                                             "name": "ค่าเช่า",
                                             "value": "200,000.00",
-                                            "description": ""
+                                            "description": {
+                                                "name": "อัตราค่าเช่า (GP) Minimum",
+                                                "value": "30,000 บาท"
+                                            }
                                         },
                                         { 
                                             "id": "ae76865-002",
                                             "name": "ค่าไฟ",
                                             "value": "31,345.00", 
-                                            "description": ""
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
                                         },
                                         { 
                                             "id": "ae76865-003",
                                             "name": "ค่าน้ำ",
                                             "value": "3,463.25", 
-                                            "description": ""
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
                                         }
                                     ]
                                 },
@@ -993,7 +1073,10 @@ HOST: https://polls.apiblueprint.org/
                                             "id": "ae76865-002",
                                             "name": "ค่าแอร์",
                                             "value": "31,345.00", 
-                                            "description": ""
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
                                         },
                                         
                                     ]
@@ -1057,5 +1140,287 @@ HOST: https://polls.apiblueprint.org/
         {
             "status": "successful"
         }
+
+
+## Request Reciept as Document [/invoice/request-reciept/{branchId}/{shopId}]
+### List all availalbe reciepts for user by shopId  [GET]
+* แสดงรายการบิลทั้งหมดที่ที่สามารถให้ลูกค้าทำการขอข้อมูลผ่านอีเมลได้
+* ฟอแมทกับการเรียกคล้ายกับการขอใบ invoice 
++ Request (application/json)
+
+    + Headers 
+    
+            Authorization: eyJjb250cmFjdElkIjoiMTIzNDU2Nzg5MCJ9
+
++ Response 200 (application/json)
+
+        {
+            "data":[
+                {
+                    "year": 2563,
+                    "month":[
+                        {
+                            "name": "Aug",
+                            "checked": true,
+                            "invoiceLists":[
+                                {
+                                    "invoiceId": "400000000002320",
+                                    "checked": true,
+                                    "paymentDetails":{
+                                        "total": "234,763.25",
+                                        "discout": "20,000.00",
+                                        "vatValue": "2,763.00",
+                                        "taxValue": "1,190.00"
+                                    },
+                                    
+                                    "paymentItems":[
+                                        {
+                                            "id": "ae76865-001",
+                                            "name": "ค่าเช่า",
+                                            "value": "200,000.00",
+                                            "description": {
+                                                "name": "อัตราค่าเช่า (GP) Minimum",
+                                                "value": "30,000 บาท"
+                                            }
+                                        },
+                                        { 
+                                            "id": "ae76865-002",
+                                            "name": "ค่าไฟ",
+                                            "value": "31,345.00", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        },
+                                        { 
+                                            "id": "ae76865-003",
+                                            "name": "ค่าน้ำ",
+                                            "value": "3,463.25", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "invoiceId": "400000000005555",
+                                    "checked": true,
+                                    "paymentDetails":{
+                                        "total": "31,345.00",
+                                        "discout": "00.00",
+                                        "vatValue": "2,763.00",
+                                        "taxValue": "1,190.00"
+                                    },
+                                    "paymentItems":[
+                                        { 
+                                            "id": "ae76865-002",
+                                            "name": "ค่าแอร์",
+                                            "value": "31,345.00", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        },
+                                        
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "year": 2562,
+                    "month":[
+                        {
+                            "name": "Jul",
+                            "checked": true,
+                            "invoiceLists":[
+                                {
+                                    "invoiceId": "400000000002320",
+                                    "checked": true,
+                                    "paymentDetails":{
+                                        "total": "234,763.25",
+                                        "discout": "20,000.00",
+                                        "vatValue": "2,763.00",
+                                        "taxValue": "1,190.00"
+                                    },
+                                    "paymentItems":[
+                                        {
+                                            "id": "ae76865-001",
+                                            "name": "ค่าเช่า",
+                                            "value": "200,000.00",
+                                            "description": {
+                                                "name": "อัตราค่าเช่า (GP) Minimum",
+                                                "value": "30,000 บาท"
+                                            }
+                                        },
+                                        { 
+                                            "id": "ae76865-002",
+                                            "name": "ค่าไฟ",
+                                            "value": "31,345.00", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        },
+                                        { 
+                                            "id": "ae76865-003",
+                                            "name": "ค่าน้ำ",
+                                            "value": "3,463.25", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "invoiceId": "400000000005555",
+                                    "checked": true,
+                                    "paymentDetails":{
+                                        "total": "31,345.00",
+                                        "discout": "00.00",
+                                        "vatValue": "2,763.00",
+                                        "taxValue": "1,190.00"
+                                    },
+                                    "paymentItems":[
+                                        { 
+                                            "id": "ae76865-002",
+                                            "name": "ค่าแอร์",
+                                            "value": "31,345.00", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        },
+                                        
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Jun",
+                            "checked": true,
+                            "invoiceLists":[
+                                {
+                                    "invoiceId": "400000000008888",
+                                    "checked": true,
+                                    "paymentDetails":{
+                                        "total": "234,763.25",
+                                        "discout": "20,000.00",
+                                        "vatValue": "2,763.00",
+                                        "taxValue": "1,190.00"
+                                    },
+                                    "paymentItems":[
+                                        {
+                                            "id": "ae76865-001",
+                                            "name": "ค่าเช่า",
+                                            "value": "200,000.00",
+                                            "description": {
+                                                "name": "อัตราค่าเช่า (GP) Minimum",
+                                                "value": "30,000 บาท"
+                                            }
+                                        },
+                                        { 
+                                            "id": "ae76865-002",
+                                            "name": "ค่าไฟ",
+                                            "value": "31,345.00", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        },
+                                        { 
+                                            "id": "ae76865-003",
+                                            "name": "ค่าน้ำ",
+                                            "value": "3,463.25", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "invoiceId": "400000000005555",
+                                    "checked": true,
+                                    "paymentDetails":{
+                                        "total": "31,345.00",
+                                        "discout": "00.00",
+                                        "vatValue": "2,763.00",
+                                        "taxValue": "1,190.00"
+                                    },
+                                    "paymentItems":[
+                                        { 
+                                            "id": "ae76865-002",
+                                            "name": "ค่าแอร์",
+                                            "value": "31,345.00", 
+                                            "description": {
+                                                "name": "รอบวันที่ 12 ก.ค. - 14 ส.ค.",
+                                                "value": ""
+                                            }
+                                        },
+                                        
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
         
+        
+###Request for Recieved Invoice via Email  [POST]
+
++ Request (application/json)
+
+    + Headers 
+    
+            Authorization: eyJjb250cmFjdElkIjoiMTIzNDU2Nzg5MCJ9
+            
++ Request (application/json)
+
+        {
+        
+            "data": [
+                {
+                    "year": 2563,
+                    "month":[
+                        {
+                            "name": "Aug",
+                            "invoiceLists":["40000000023220", "400000000234444"]
+                        },
+                        {
+                            "name": "Jul",
+                            "invoiceLists":["30000000023220"]
+                        }
+                    ]
+                    
+                },
+                {
+                    "year": 2562,
+                    "month":[
+                        {
+                            "name": "Feb",
+                            "invoiceLists":["40000000023220", "400000000234444"]
+                        },
+                        {
+                            "name": "Jul",
+                            "invoiceLists":["30000000023220"]
+                        }
+                    ]
+                    
+                }
+            ]
+                
+        }
+
+
++ Response 200 (application/json)
+
+        {
+            "status": "successful"
+        }
             
