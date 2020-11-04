@@ -1,6 +1,6 @@
 FORMAT: 1A
 HOST: https://polls.apiblueprint.org/
-:+1: 
+
 # Invoice
 ตัวอย่าง API Response สำหรับใช้แสดงข้อมูลการชำระเงิน
 
